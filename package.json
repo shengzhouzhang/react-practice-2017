@@ -5,7 +5,8 @@
   "author": "Steven Zhang <steven.shengzhou@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src/ -d lib/"
+    "build": "babel src/ -d lib/",
+    "mocha": "mocha src/**/*Spec.* --compilers js:babel-core/register"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",

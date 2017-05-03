@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Listing from './Listing';
 import AgencyBranding from './AgencyBranding';
 
-describe('Listing', () => {
+describe('Listing Component', () => {
   const PROPS = {
     agency: {
       agencyName: 'agency-name',

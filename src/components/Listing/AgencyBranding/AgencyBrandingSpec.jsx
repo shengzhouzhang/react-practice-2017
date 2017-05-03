@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import AgencyBranding from './AgencyBranding';
 
-describe('AgencyBranding', () => {
+describe('AgencyBranding Component', () => {
   const PROPS = {
     agencyName: 'agency-name',
     logoUrl: 'logo-url',
