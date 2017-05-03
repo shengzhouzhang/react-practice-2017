@@ -1,0 +1,10 @@
+{
+  "presets": [
+    [
+      "env",
+      { "include": [ "babel-plugin-transform-es2015-spread" ] }
+    ],
+    "react",
+    "flow"
+  ]
+}
