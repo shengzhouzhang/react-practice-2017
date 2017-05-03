@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AgencyBranding({ agencyName, logoUrl, backgroundColor }) {
+export default function AgencyBranding({ agencyName, logoUrl, backgroundColor }) {
   return (
     <div styles={{ backgroundColor }}>
       <img src={logoUrl} alt={agencyName} />
@@ -9,10 +9,10 @@ function AgencyBranding({ agencyName, logoUrl, backgroundColor }) {
   );
 }
 
-AgencyBranding.propTypes = {
+export const AgencyBrandingProps = PropTypes.shape({
   agencyName: PropTypes.string.isRequired,
   logoUrl: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
-};
+});
 
-export default AgencyBranding;
+AgencyBranding.propTypes = AgencyBrandingProps.isRequired;
