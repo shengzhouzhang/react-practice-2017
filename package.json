@@ -5,7 +5,8 @@
   "author": "Steven Zhang <steven.shengzhou@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src/ -d lib/",
+    "build": "babel src/ -d dist/",
+    "start": "nodemon src/server/server.js --exec babel-node",
     "mocha": "mocha src/**/*Spec.* --compilers js:babel-core/register"
   },
   "dependencies": {
@@ -34,6 +35,8 @@
     "sinon": "^2.1.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.45.0"
+    "babel-node": "^6.5.3",
+    "flow-bin": "^0.45.0",
+    "nodemon": "^1.11.0"
   }
 }
