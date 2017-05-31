@@ -1,13 +1,12 @@
-import { MongoClient } from 'mongodb';
 
-const url = 'mongodb://localhost:27017/listings';
+import Promise from 'bluebird';
+import conn from './conn';
 
-MongoClient.connect(url, (err, db) => {
-  if (err) {
-    console.error('error', err);
-    return;
-  }
-  console.log('Connected successfully to server');
-  console.log(db);
-  db.close();
-});
+export default function fetchListings(query) {
+  return conn.then(db => new Promise((resolve, reject) => {
+    db.collection('listings').find(query).toArray((err, data) => {
+      if (err) { reject(err); return; }
+      resolve(data);
+    });
+  }));
+}
