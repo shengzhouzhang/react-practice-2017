@@ -6,6 +6,8 @@ import compression from 'compression';
 import ListingListRoute from './routes/ListingListRoute';
 import log from '../utils/log';
 
+import './dao/Listings';
+
 const server = express();
 
 server.engine('handlebars', handlebars());
