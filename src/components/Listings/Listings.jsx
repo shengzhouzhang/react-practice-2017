@@ -5,11 +5,11 @@ import ListingCard, { ListingCardProps } from './ListingCard';
 export default function ListingList({ items = [] }) {
   return (
     <div>
-      { items.map(item => (<ListingCard {...item} />)) }
+      { items.map(item => (<ListingCard key={`listing-${item.id}`} {...item} />)) }
     </div>
   );
 }
 
-export const ListingListProps = PropTypes.arrayOf(ListingCardProps);
+export const ListingsProps = PropTypes.arrayOf(ListingCardProps);
 
-ListingList.propTypes = ListingListProps.isRequired;
+ListingList.propTypes = ListingsProps.isRequired;

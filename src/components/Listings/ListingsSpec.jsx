@@ -1,10 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import ListingList from './ListingList';
+import Listings from './Listings';
 import ListingCard from './ListingCard';
 
-describe('ListingList Component', () => {
+describe('Listings Component', () => {
   const LISTING = {
     branding: {
       color: '#2c383d',
@@ -30,7 +30,7 @@ describe('ListingList Component', () => {
   };
 
   it('should render a list of Listing component', () => {
-    const wrapper = shallow(<ListingList {...PROPS} />);
+    const wrapper = shallow(<Listings {...PROPS} />);
     const listings = wrapper.find(ListingCard);
 
     expect(listings).to.have.length(2);
