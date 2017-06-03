@@ -12,15 +12,17 @@ describe('Branding Component', () => {
     color: 'background-color',
   };
 
-  it('should contain agency logo image', () => {
-    const wrapper = shallow(<Branding {...PROPS} />);
-    const logoImg = wrapper.find('img');
-    expect(logoImg).to.have.length(1);
-    expect(logoImg.props()).to.eql({ src: 'logo-url', alt: 'agency-name' });
-  });
-
   it('should style background color', () => {
     const wrapper = shallow(<Branding {...PROPS} />);
-    expect(wrapper.props().styles.backgroundColor).to.equal('background-color');
+    const branding = wrapper.find('.branding');
+    expect(branding.prop('styles').backgroundColor).to.equal('background-color');
+  });
+
+  it('should contain agency logo image', () => {
+    const wrapper = shallow(<Branding {...PROPS} />);
+    const logo = wrapper.find('.branding__logo');
+    expect(logo).to.have.length(1);
+    expect(logo.prop('src')).to.eql('logo-url');
+    expect(logo.prop('alt')).to.eql('agency-name');
   });
 });

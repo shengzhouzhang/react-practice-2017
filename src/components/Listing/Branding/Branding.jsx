@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 export default function Branding({ logo: { url, alt }, color }) {
   return (
-    <div styles={{ backgroundColor: color }}>
-      <img src={url} alt={alt} />
+    <div className="branding" styles={{ backgroundColor: color }}>
+      <img className="branding__logo" src={url} alt={alt} />
     </div>
   );
 }
