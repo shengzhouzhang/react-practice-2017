@@ -7,7 +7,7 @@
   "scripts": {
     "build": "babel src/ -d dist/",
     "start": "nodemon src/server/server.js --exec babel-node",
-    "test": "mocha ./src/**/*Spec.jsx --compilers js:babel-register",
+    "test": "mocha ./src/**/*Spec.* --compilers js:babel-register",
     "mocha": "mocha src/**/*Spec.* --compilers js:babel-core/register",
     "mongodb": "docker run --rm -v db:/data/db -p 27017:27017 -it mongodb"
   },
