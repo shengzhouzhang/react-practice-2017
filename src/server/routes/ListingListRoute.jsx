@@ -7,6 +7,7 @@ import log from '../../utils/log';
 export default function ListingListRoute(req, res) {
   return ListingService.fetchListings()
     .then((data) => {
+      console.log('data', data);
       res.render('index', {
         html: ReactDOMServer.renderToString(<ListingList items={data} />),
         data: JSON.stringify(data),

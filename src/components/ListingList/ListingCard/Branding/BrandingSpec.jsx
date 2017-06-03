@@ -15,7 +15,7 @@ describe('Branding Component', () => {
   it('should style background color', () => {
     const wrapper = shallow(<Branding {...PROPS} />);
     const branding = wrapper.find('.branding');
-    expect(branding.prop('styles').backgroundColor).to.equal('background-color');
+    expect(branding.prop('style').backgroundColor).to.equal('background-color');
   });
 
   it('should contain agency logo image', () => {
