@@ -5,7 +5,7 @@ machine:
     version: 7.10.0
 dependencies:
   override:
-    - yarn install --pro
+    - ./scripts/install.sh
 test:
   post:
     - yarn test
