@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AgencyBranding, { AgencyBrandingProps } from './AgencyBranding';
+import Branding, { BrandingProps } from './Branding';
 
-export default function Listing({ agency }) {
+export default function Listing({ branding }) {
   return (
     <div>
-      <AgencyBranding {...agency} />
+      <Branding {...branding} />
     </div>
   );
 }
 
 export const ListingProps = PropTypes.shape({
-  agency: AgencyBrandingProps.isRequired,
+  branding: BrandingProps.isRequired,
 });
 
 Listing.propTypes = ListingProps.isRequired;
