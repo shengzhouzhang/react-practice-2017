@@ -1,0 +1,18 @@
+{
+  "mainPhoto": {
+    "url": "https://i2.au.reastatic.net/640x480/5ca61825830ad3778f7433d85afff61569e7bcc177010b66a809494f9a0b5988/main.jpg",
+    "alt": "10 Pardon Place, Noosaville, Qld 4566"
+  },
+  "branding": {
+    "color": "#000000",
+    "logo": {
+      "url": "https://i1.au.reastatic.net/agencylogo/PAZMVZ/12/20150630101049.gif",
+      "alt": "One Agency - Noosa"
+    }
+  },
+  "price": "$649,000 - As New!",
+  "address": "10 Pardon Place, Noosaville, Qld 4566",
+  "bedrooms": 3,
+  "bathrooms": 2,
+  "carSpaces": 2
+}
