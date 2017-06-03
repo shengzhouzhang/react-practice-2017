@@ -1,0 +1,11 @@
+machine:
+  timezone:
+    Australia/Melbourne
+  node:
+    version: 7.10.0
+dependencies:
+  override:
+    - yarn install
+test:
+  post:
+    - yarn test
