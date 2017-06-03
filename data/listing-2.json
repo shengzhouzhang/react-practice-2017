@@ -10,9 +10,11 @@
       "alt": "One Agency - Noosa"
     }
   },
-  "price": "$649,000 - As New!",
-  "address": "10 Pardon Place, Noosaville, Qld 4566",
-  "bedrooms": 3,
-  "bathrooms": 2,
-  "carSpaces": 2
+  "propertyDetails": {
+    "price": "$649,000 - As New!",
+    "address": "10 Pardon Place, Noosaville, Qld 4566",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "carSpaces": 2
+  }
 }
