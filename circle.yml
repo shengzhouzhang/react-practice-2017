@@ -5,7 +5,7 @@ machine:
     version: 7.10.0
 dependencies:
   override:
-    - ./scripts/install.sh
+    - npm install --production
 test:
   post:
     - yarn test
