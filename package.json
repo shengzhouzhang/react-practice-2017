@@ -5,7 +5,8 @@
   "author": "Steven Zhang <steven.shengzhou@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src/ -d dist/",
+    "build": "webpack && babel src/ -d dist/",
+    "webpack-dev": "webpack-dev-server",
     "start": "nodemon src/server/server.js --exec babel-node",
     "test": "mocha ./src/**/*Spec.* --compilers js:babel-core/register",
     "mongodb": "docker run --rm -v db:/data/db -p 27017:27017 -it mongodb"
@@ -14,6 +15,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-spread": "^6.22.0",
     "babel-preset-env": "^1.4.0",
@@ -31,6 +33,7 @@
     "eslint-plugin-react": "6.10.3",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
+    "lodash": "^4.17.4",
     "mocha": "^3.3.0",
     "mongodb": "^2.2.27",
     "page": "^1.7.1",
@@ -38,10 +41,12 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
-    "sinon": "^2.1.0"
+    "sinon": "^2.1.0",
+    "webpack": "^2.6.1"
   },
   "devDependencies": {
     "flow-bin": "^0.45.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "webpack-dev-server": "^2.4.5"
   }
 }

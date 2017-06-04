@@ -17,7 +17,7 @@ server.use(compression(9));
 server.use(bodyParser.json());
 
 server.use('/listings/create', AdminRoute);
-server.use('/', ListingListRoute);
+server.use('/listings', ListingListRoute);
 
 server.listen(8080, (err) => {
   if (err) { log.error(err); }

@@ -5,13 +5,15 @@ import Listings from '../components/Listings';
 import Admin from '../components/Admin';
 
 page('/listings/create', () => {
-  console.log('create!!');
   const container = document.querySelector('.app-container');
-  ReactDOM.render(container, <Admin />);
+  ReactDOM.render(<Admin />, container);
 });
 
 page('/listings', () => {
-  console.log('listings!!');
   const container = document.querySelector('.app-container');
-  ReactDOM.render(container, <Listings />);
+  ReactDOM.render(<Listings />, container);
 });
+
+export default {
+  start: () => page(),
+};

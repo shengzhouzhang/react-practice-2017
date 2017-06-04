@@ -7,14 +7,19 @@ export default class Form extends Component {
     this.onAddressChange = this.createHandler('address');
     this.onPriceChange = this.createHandler('price');
     this.onColorChange = this.createHandler('color');
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onSubmit(event) {
+    event.preventDefault();
+    this.props.onSubmit();
   }
   createHandler(fieldName) {
     return event => this.props.onChange({ fieldName, value: event.target.value });
   }
   render() {
-    const { address, price, color, onSubmit } = this.props;
+    const { address, price, color } = this.props;
     return (
-      <form onSubmit={onSubmit}>
+      <form onSubmit={this.onSubmit}>
         <input className="form__address" value={address} onChange={this.onAddressChange} />
         <input className="form__price" value={price} onChange={this.onPriceChange} />
         <input className="form__branding-color" value={color} onChange={this.onColorChange} />

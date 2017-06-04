@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Form from './Form';
 
 export default class FormContainer extends Component {
@@ -14,11 +14,10 @@ export default class FormContainer extends Component {
     color: '',
   }
   onChange({ fieldName, value }) {
-    console.log('onChange!!!');
     this.setState({ [fieldName]: value });
   }
   onSubmit() {
-    console.log('onSubmit!!!');
+    this.props.createListing(this.state);
   }
   render() {
     const { address, price, color } = this.state;
@@ -33,3 +32,9 @@ export default class FormContainer extends Component {
     );
   }
 }
+
+export const FormContainerProps = PropTypes.shape({
+  createListing: PropTypes.func.isRequired,
+});
+
+FormContainer.propTypes = FormContainerProps.isRequired;
