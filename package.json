@@ -7,12 +7,12 @@
   "scripts": {
     "build": "babel src/ -d dist/",
     "start": "nodemon src/server/server.js --exec babel-node",
-    "test": "mocha ./src/**/*Spec.* --compilers js:babel-register",
-    "mocha": "mocha src/**/*Spec.* --compilers js:babel-core/register",
+    "test": "mocha ./src/**/*Spec.* --compilers js:babel-core/register",
     "mongodb": "docker run --rm -v db:/data/db -p 27017:27017 -it mongodb"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-es2015-spread": "^6.22.0",
     "babel-preset-env": "^1.4.0",
@@ -39,7 +39,6 @@
     "sinon": "^2.1.0"
   },
   "devDependencies": {
-    "babel-node": "^6.5.3",
     "flow-bin": "^0.45.0",
     "nodemon": "^1.11.0"
   }
