@@ -3,9 +3,3 @@ machine:
     Australia/Melbourne
   node:
     version: 7.10.0
-dependencies:
-  override:
-    - npm install --production
-test:
-  post:
-    - yarn test
