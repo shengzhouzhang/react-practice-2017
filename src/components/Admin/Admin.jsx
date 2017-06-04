@@ -1,10 +1,7 @@
 import React from 'react';
 import Form from './Form';
-
-function createListing(data) {
-  console.log('createListing', data);
-}
+import ListingRepository from '../../repositories/Listing';
 
 export default function Admin() {
-  return (<Form createListing={createListing} />);
+  return (<Form createListing={ListingRepository.createListing} />);
 }
