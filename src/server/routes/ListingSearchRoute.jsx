@@ -4,7 +4,7 @@ import Listings from '../../components/Listings';
 import ListingService from '../services/ListingService';
 import log from '../../utils/log';
 
-export default function ListingListRoute(req, res) {
+export default function ListingSearchRoute(req, res) {
   return ListingService.fetchListings()
     .then((data) => {
       res.render('index', {

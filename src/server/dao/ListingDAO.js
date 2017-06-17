@@ -11,6 +11,16 @@ function fetchListings(query) {
   }));
 }
 
+function createListing(query) {
+  return conn.then(db => new Promise((resolve, reject) => {
+    db.collection('listings').insert(query, (err, data) => {
+      if (err) { reject(err); return; }
+      resolve(data);
+    });
+  }));
+}
+
 export default {
   fetchListings,
+  createListing,
 };
