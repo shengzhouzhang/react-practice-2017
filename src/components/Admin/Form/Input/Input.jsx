@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class TextInput extends Component {
+export default class Input extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
@@ -12,13 +12,12 @@ export default class TextInput extends Component {
     this.props.onChange(event.target.value);
   }
   render() {
-    const { id, name, type, placeholder, className, label, value, errorMessage } = this.props;
+    const { id, type, placeholder, className, label, value, errorMessage } = this.props;
     return (
       <div className={classNames(className, { hasError: !!errorMessage })}>
         <label htmlFor={id}>{label}</label>
         <input
           id={id}
-          name={name}
           placeholder={placeholder}
           className="text-input"
           type={type}
@@ -29,18 +28,17 @@ export default class TextInput extends Component {
       </div>
     );
   }
-
 }
 
-export const TextInputProps = PropTypes.shape({
+export const InputProps = PropTypes.shape({
   id: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'number', 'color']).isRequired,
   placeholder: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   className: PropTypes.string,
-  errorMessage: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string,
 });
 
-TextInput.propTypes = TextInputProps.isRequired;
+Input.propTypes = InputProps.isRequired;
