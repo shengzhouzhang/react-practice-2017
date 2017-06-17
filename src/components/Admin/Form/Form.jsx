@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Input from './Input';
 
-function populateRemainingFields({ address, price, color }) {
+export function populateRemainingFields({ address, price, color }) {
   return {
     mainPhoto: {
       url: 'https://i2.au.reastatic.net/640x480/4cd186cdfca5941d6a72e5a58b3b8bb1e490df705f38168e491524f3120b5c9f/main.jpg',
@@ -72,8 +72,8 @@ export default class Form extends Component {
           color: color.value,
         }),
       )
-      .then(() => alert('property created')) // eslint-disable-line
-      .catch(err => alert(`failed to create property: ${err.message}`)); // eslint-disable-line
+      .then(() => console.log('property created')) // eslint-disable-line
+      .catch(err => console.error(`failed to create property: ${err.message}`)); // eslint-disable-line
     }
   }
   validateAddress(value) {
