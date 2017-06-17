@@ -8,9 +8,7 @@ function createListing(data) {
     method: 'POST',
     body: JSON.stringify(data),
   };
-  return fetch('/api/listings/create', options)
-    .then((res) => { console.log(res); })
-    .catch((res) => { console.error(res); });
+  return fetch('/api/listings/create', options);
 }
 
 export default {

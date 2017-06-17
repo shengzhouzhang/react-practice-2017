@@ -11,7 +11,8 @@ page('/listings/create', () => {
 
 page('/listings', () => {
   const container = document.querySelector('.app-container');
-  ReactDOM.render(<Listings />, container);
+  const data = JSON.parse(document.querySelector('.initial-state').text);
+  ReactDOM.render(<Listings items={data} />, container);
 });
 
 export default {

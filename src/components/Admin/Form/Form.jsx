@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Input from './Input';
 
+function populateRemainingFields({ address, price, color }) {
+  return {
+    mainPhoto: {
+      url: 'https://i2.au.reastatic.net/640x480/4cd186cdfca5941d6a72e5a58b3b8bb1e490df705f38168e491524f3120b5c9f/main.jpg',
+      alt: address,
+    },
+    branding: {
+      color,
+      logo: {
+        url: 'https://i1.au.reastatic.net/agencylogo/DIMGNH/12/20160823153934.gif',
+        alt: 'Coronis - Coorparoo',
+      },
+    },
+    propertyDetails: {
+      price,
+      address,
+      bedrooms: 3,
+      bathrooms: 1,
+      carSpaces: 2,
+    },
+  };
+}
+
 export default class Form extends Component {
   constructor() {
     super();
@@ -42,11 +65,15 @@ export default class Form extends Component {
     event.preventDefault();
     const { address, price, color } = this.state;
     if (this.validateAddress(address.value)) {
-      this.props.createListing({
-        address: address.value,
-        price: price.value || 'price available on request',
-        color: color.value,
-      });
+      this.props.createListing(
+        populateRemainingFields({
+          address: address.value,
+          price: price.value || 'price available on request',
+          color: color.value,
+        }),
+      )
+      .then(() => alert('property created')) // eslint-disable-line
+      .catch(err => alert(`failed to create property: ${err.message}`)); // eslint-disable-line
     }
   }
   validateAddress(value) {
