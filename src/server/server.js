@@ -1,3 +1,5 @@
+import 'css-modules-require-hook/preset';
+
 import path from 'path';
 import express from 'express';
 import handlebars from 'express-handlebars';
@@ -8,6 +10,8 @@ import { CreateListingRoute, CreateListingApiRoute } from './routes/CreateListin
 import log from '../utils/log';
 
 const server = express();
+
+server.use('/assets/', express.static(path.join(__dirname, '..', '..', 'dist')));
 
 server.engine('handlebars', handlebars());
 server.set('view engine', 'handlebars');
