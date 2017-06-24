@@ -10,7 +10,9 @@
     "server-dev": "nodemon src/server/server.js --exec babel-node",
     "mongo-start": "docker run --rm -v db:/data/db -p 27017:27017 -it mongodb",
     "test": "mocha ./src/**/*Spec.* --compilers js:babel-core/register",
-    "start-prod": "set NODE_ENV=production && webpack && babel-node src/server/server.js"
+    "e2e": "mocha ./e2e/**/*Spec.* --compilers js:babel-core/register",
+    "e2e-wait": "sleep 5 && yarn e2e",
+    "start-prod": "webpack && babel-node src/server/server.js"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
@@ -26,6 +28,7 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "chai": "^3.5.0",
+    "cheerio": "^1.0.0-rc.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "css-loader": "^0.28.4",
@@ -51,6 +54,7 @@
     "sass-loader": "^6.0.6",
     "sinon": "^2.1.0",
     "style-loader": "^0.18.2",
+    "superagent": "^3.5.2",
     "webpack": "^2.6.1"
   },
   "devDependencies": {

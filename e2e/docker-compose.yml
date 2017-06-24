@@ -1,0 +1,27 @@
+version: '2'
+services:
+  mongodb:
+    build: ../mongodb/
+    ports:
+      - 27017:27017
+  app:
+    build: ../
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongodb:27017/mydb
+    ports:
+      - 8000:8000
+    entrypoint:
+      - yarn
+      - start-prod
+  e2e:
+    build: ../
+    depends_on:
+      - app
+    environment:
+      - APP_URI=http://app:8080
+    entrypoint:
+      - yarn
+      - e2e-wait
