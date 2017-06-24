@@ -3,3 +3,5 @@ machine:
     Australia/Melbourne
   node:
     version: 7.10.0
+  services:
+    - docker
