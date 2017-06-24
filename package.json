@@ -9,7 +9,7 @@
     "webpack-dev": "webpack-dev-server",
     "server-dev": "nodemon src/server/server.js --exec babel-node",
     "mongo-start": "docker run --rm -v db:/data/db -p 27017:27017 -it mongodb",
-    "test": "run-s unit-tests e2e-docker",
+    "test": "run-s unit-test e2e-docker",
     "unit-test": "mocha --opts .mocharc ./src/**/*Spec.*",
     "e2e-docker": "cd e2e && docker-compose run e2e --rm",
     "e2e-local": "mocha --opts .mocharc ./e2e/**/*Spec.*",
