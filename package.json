@@ -9,8 +9,8 @@
     "webpack-dev": "webpack-dev-server",
     "server-dev": "nodemon src/server/server.js --exec babel-node",
     "mongo-start": "docker run --rm -v db:/data/db -p 27017:27017 -it mongodb",
-    "test": "mocha ./src/**/*Spec.* --compilers js:babel-core/register",
-    "e2e": "mocha ./e2e/**/*Spec.* --compilers js:babel-core/register",
+    "test": "mocha --opts .mocharc ./src/**/*Spec.*",
+    "e2e": "mocha --opts .mocharc ./e2e/**/*Spec.*",
     "e2e-wait": "sleep 5 && yarn e2e",
     "start-prod": "webpack && babel-node src/server/server.js"
   },
